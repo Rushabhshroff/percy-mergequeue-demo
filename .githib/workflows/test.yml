@@ -1,0 +1,20 @@
+name: Tests
+on:
+  pull_request:
+  merge_group:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Percy Test
+        run: npm run test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
