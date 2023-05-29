@@ -1,5 +1,5 @@
 [{
     "name": "Snapshot one",
-    "url": "https://browserstack.com",
+    "url": "https://browserstack.com/docs",
     "waitForTimeout": 1000
   }]
